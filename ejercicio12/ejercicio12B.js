@@ -43,14 +43,20 @@ function encaminar(pedido,respuesta,camino) {
                 respuesta.write(contenido)
                 respuesta.end()
             })
+            .catch(error => {
+                respuesta.writeHead(500, { 'Content-Type': 'text/plain' })
+                respuesta.write('Error interno')
+                respuesta.end()
+            
+            })
             .catch((error) => {
                 respuesta.writeHead(404, {'content-type': 'text/html'});
                 respuesta.write('<!doctype html><html><head></head><body><h1>Error: 404: Recurso inexistente</h1></body></html>');
                 respuesta.end();
             })
-            })
         }
-    }
+    )}
+}
 }
 
 
