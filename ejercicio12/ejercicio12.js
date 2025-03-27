@@ -73,7 +73,7 @@ function recuperar(pedido, respuesta){
         <h2>Clave: ${formulario.get('clave')}</h2><br>
         <a href="index.html">Volver</a>
         </body></html>`
-        respuesta.end(pagina)
+        respuesta.end()
     })
 }
 
